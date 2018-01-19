@@ -11,6 +11,12 @@ public:
   double d_error;
 
   /*
+   * CTEs
+   */
+  double prev_cte;
+  double int_cte;
+
+  /*
   * Coefficients
   */ 
   double Kp;
