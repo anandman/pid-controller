@@ -5,7 +5,7 @@ This code implements a Proportional/Integral/Derivative Controller to maneuver a
 ---
 
 ## PID Controller Background
-<img src="https://latex.codecogs.com/gif.download?%5CLARGE%20u%28t%29%20%3D%20K_pe%28t%29%20+%20K_i%5Cint_%7B0%7D%5E%7Bt%7De%28%5Ctau%29d%5Ctau%20+%20K_d%5Cfrac%7B%5Cmathrm%7Bd%7De%28t%29%7D%7B%5Cmathrm%7Bd%7Dt%7D">
+![u(t) = Kp*e(t) + Ki*Σe(τ) + Kd*de(t)/dt](https://latex.codecogs.com/png.download?%5CLARGE%20u%28t%29%20%3D%20K_pe%28t%29%20+%20K_i%5Cint_%7B0%7D%5E%7Bt%7De%28%5Ctau%29d%5Ctau%20+%20K_d%5Cfrac%7B%5Cmathrm%7Bd%7De%28t%29%7D%7B%5Cmathrm%7Bd%7Dt%7D)
 
 PID stands for Proportional Integral Derivative, representing the three terms in the equation above. A PID controller
 is a control loop feedback mechanism that continuously attempts to minimize the difference, _e(t) = SP - PV(t)_,
