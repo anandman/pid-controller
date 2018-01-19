@@ -21,7 +21,13 @@ an overshoot of the desired output. The integral term is the sum of the error ov
 can be used to both offset the error from the proportional term as well as accelerate the movement towards the setpoint.
 However, this acceleration can cause the current value to overshoot the setpoint even more so than just the proportional
 term. The derivative term controls the rate of change of the error (i.e., "future error"). This can have the effect of
-dampening the overshoot introduced by the proportional and integral terms.  
+dampening the overshoot introduced by the proportional and integral terms.
+
+In general, most industrial applications will use either a PI or a PID controller to ensure any steady state error (SSE)
+is corrected for. P or PD controllers can't accomplish this. A PID controller is preferable to a PI controller in
+situations where the dampening affect is also desired but if the priority is on speed of recovery, a PI controller
+may be more desirable. Here we use all three terms since we want the vehicle to drive smoothly, as well as correctly,
+for any passengers.
 
 ## PID Implementation
 The PID controller for this project controls the steering angle to drive a vehicle in a simulator while minimizing the
