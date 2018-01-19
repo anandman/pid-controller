@@ -5,13 +5,15 @@ This code implements a Proportional/Integral/Derivative Controller to maneuver a
 ---
 
 ## PID Controller Background
-![u(t) = Kp*e(t) + Ki*Σe(τ) + Kd*de(t)/dt](https://latex.codecogs.com/png.download?%5CLARGE%20u%28t%29%20%3D%20K_pe%28t%29%20+%20K_i%5Cint_%7B0%7D%5E%7Bt%7De%28%5Ctau%29d%5Ctau%20+%20K_d%5Cfrac%7B%5Cmathrm%7Bd%7De%28t%29%7D%7B%5Cmathrm%7Bd%7Dt%7D)
-
 PID stands for Proportional Integral Derivative, representing the three terms in the equation above. A PID controller
 is a control loop feedback mechanism that continuously attempts to minimize the difference, _e(t) = SP - PV(t)_,
-between a process variable (_PV_) and the desired setpoint value (_SP_). The equation above is run repeatedly until
-the difference is minimized to an acceptable level. In the equation above, _Kp_ is the proportional gain, _Ki_ is the
+between a process variable (_PV_) and the desired setpoint value (_SP_). The equation below is run repeatedly until
+the difference is minimized to an acceptable level. In the equation below, _Kp_ is the proportional gain, _Ki_ is the
 integral gain, and _Kd_ is the derivative gain. These parameters must be tuned (see [below](#pid-coefficient-tuning)).
+
+<p align="center">
+<img alt="u(t) = Kp*e(t) + Ki*Σe(τ) + Kd*de(t)/dt" src="images/PID_equation.svg">
+</p>
 
 The proportional term is the primary term contributing the bulk of the output change, _u(t)_. The proportional term
 can have a steady state error which must be corrected. The integral term is the sum of the error over time and can be
