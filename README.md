@@ -38,6 +38,12 @@ Finally, _Kd_ was set to minimize the overshoot from the first two terms.
 debug statements will change the timing of how quickly the steering angle can be changed and thus the response can
 be different. Further tuning will be required if the PID's performance varies relative to the simulator.**   
 
+## Results
+Here is the result of running the PID controller on the sample track in the simulator. Click on the preview to see the full video.
+<p align="center">
+<a href="images/PID_track.mov"><img src="images/PID_track.gif"></a>
+</p>
+
 ## Dependencies
 * [Udacity Self-Driving Car Simulator](https://github.com/udacity/self-driving-car-sim/releases)
 * [uWebSocketIO](https://github.com/uWebSockets/uWebSockets)
