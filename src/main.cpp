@@ -39,7 +39,7 @@ int main()
   //pid_s.Init(0.2,0.004,3.0); // this works when we "slow" it down with the DEBUG cout statements below, but not otherwise
   pid_s.Init(0.2,0.001,3.5); // manually tuned parameters - see README
 
-  h.onMessage([&pid_s, &pid_t](uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length, uWS::OpCode opCode) {
+  h.onMessage([&pid_s](uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length, uWS::OpCode opCode) {
     // "42" at the start of the message means there's a websocket message event.
     // The 4 signifies a websocket message
     // The 2 signifies a websocket event
