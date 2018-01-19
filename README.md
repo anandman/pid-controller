@@ -15,11 +15,13 @@ integral gain, and _Kd_ is the derivative gain. These parameters must be tuned (
 <img alt="u(t) = Kp*e(t) + Ki*Σe(τ) + Kd*de(t)/dt" src="images/PID_equation.svg">
 </p>
 
-The proportional term is the primary term contributing the bulk of the output change, _u(t)_. The proportional term
-can have a steady state error which must be corrected. The integral term is the sum of the error over time and can be
-used to both offset the error from the proportional term as well as accelerate the movement towards the setpoint. The
-integral term can cause the current value to overshoot the setpoint, however. The derivative term controls the rate
-of change of the error. This can have the effect of minimizing the overshoot introduced by the integral term.  
+The proportional term is essentially the "now error" and is the primary term contributing to the bulk of the output
+change, _u(t)_. The proportional term can have a steady state error which must be corrected. It can also create
+an overshoot of the desired output. The integral term is the sum of the error over time (i.e., "past error") and
+can be used to both offset the error from the proportional term as well as accelerate the movement towards the setpoint.
+However, this acceleration can cause the current value to overshoot the setpoint even more so than just the proportional
+term. The derivative term controls the rate of change of the error (i.e., "future error"). This can have the effect of
+dampening the overshoot introduced by the proportional and integral terms.  
 
 ## PID Implementation
 The PID controller for this project controls the steering angle to drive a vehicle in a simulator while minimizing the
